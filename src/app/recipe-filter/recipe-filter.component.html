@@ -1,0 +1,31 @@
+<form [formGroup]="recipeForm">
+    <fieldset>
+        <legend>Filters</legend>
+        <button class="btn btn__clear" (click)="clearFilter()">Clear all</button>
+        <div class="mb-3">
+            <label for="keyword" class="form-label">Keyword</label>
+            <input type="text" class="form-control" id="keyword" formControlName="title">
+        </div>
+        <div class="mb-3">
+            <label for="category" class="form-label">Category</label>
+            <input type="text" class="form-control" id="category">
+        </div>
+        <div class="mb-3">
+            <label for="ingredient" class="form-label">Ingredient</label>
+            <input type="text" class="form-control" id="ingredient" formControlName="ingredients">
+        </div>
+        <div class="mb-3">
+            <label for="tags" class="form-label">Tags</label>
+            <input type="text" class="form-control" id="tags" formControlName="tags">
+        </div>
+        <div class="mb-3">
+            <label for="prepTime" class="form-label">Prepration Time</label>
+            <input type="text" class="form-control" id="prepTime" formControlName="prepTime">
+        </div>
+        <div class="mb-3">
+            <label for="cookingTime" class="form-label">Cooking Time</label>
+            <input type="text" class="form-control" id="cookingTime" formControlName="cookingTime">
+        </div>
+        <button class="btn btn__result" (click)="filterResults()">See results</button>
+    </fieldset>
+</form>

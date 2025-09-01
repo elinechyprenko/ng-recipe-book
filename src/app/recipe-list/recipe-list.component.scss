@@ -1,0 +1,125 @@
+.row {
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.p-dropdown {
+  width: 14rem;
+  font-weight: normal;
+}
+
+.recipe {
+  &-col {
+    margin: 0.75em;
+    border: 2px solid #f8bbd0;
+    border-radius: 12px;
+    background-color: #fff;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    &:hover {
+      box-shadow: 0 6px 14px rgba(244, 143, 177, 0.3);
+      transform: translateY(-4px);
+    }
+  }
+
+  &-content {
+    text-align: center;
+    padding: 1rem;
+    &__image {
+      width: 100%;
+      max-height: 160px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin: 1rem 0;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease;
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+    &__name {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #e91e63;
+      margin-bottom: 0.5rem;
+    }
+    &__time {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #555;
+      background: #fce4ec;
+      padding: 4px 10px;
+      border-radius: 12px;
+      display: inline-block;
+      margin-top: 0.5rem;
+    }
+  }
+}
+
+.recipe-list-item {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  width: 100%;
+  img {
+    width: 150px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    margin-right: 2rem;
+  }
+  .recipe-list-detail {
+    flex: 1 1 0;
+  }
+  .p-rating {
+    margin: 0 0 0.5rem 0;
+  }
+  .recipe-prep-time {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    align-self: flex-end;
+  }
+  .recipe-list-action {
+    display: flex;
+    flex-direction: column;
+  }
+  .p-button {
+    margin-bottom: 0.5rem;
+  }
+}
+
+.card {
+  padding: 2rem;
+  background-color: #fff;
+  border: 1px solid #f8bbd0;
+  border-radius: 16px;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 12px rgba(244, 143, 177, 0.2);
+}
+
+@media screen and (max-width: 576px) {
+  :host ::ng-deep .recipe-list-item {
+    flex-direction: column;
+    align-items: center;
+    img {
+      width: 75%;
+      margin: 2rem 0;
+    }
+    .recipe-list-detail {
+      text-align: center;
+    }
+    .recipe-prep-time {
+      align-self: center;
+    }
+    .recipe-list-action {
+      display: flex;
+      flex-direction: column;
+    }
+    .recipe-list-action {
+      margin-top: 2rem;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+  }
+}

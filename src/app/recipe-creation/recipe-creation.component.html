@@ -1,0 +1,68 @@
+<ng-container *ngIf="valueChanges$ | async"></ng-container>
+<ng-container *ngIf="saveClick$ | async"></ng-container>
+<ng-container *ngIf="uploadRecipeImages$ | async"></ng-container>
+
+<h1>New Recipe</h1>
+<form class="form" [formGroup]="recipeForm">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-8">
+                <div class="row mb-3">
+                    <div class="col-5">
+                        <label for="title">Title</label>
+                        <input type="text" name="Title" formControlName="title" class="form-control" />
+                    </div>
+                    <div class="col-5">
+                        <label for="Ingredients">Ingredients</label>
+                        <input type="text" name="Ingredients" formControlName="ingredients" class="form-control" />
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-5">
+                        <label for="ImageUrl">ImageUrl</label>
+                        <input type="file" name="imageUrl" formControlName="imageUrl" class="form-control" multiple
+                            accept="image/*" (change)="onFileSelected($event)" />
+                        <button (click)="OnUpload(selectedFiles)">Upload</button>
+                        <div *ngIf="uploadProgress > 0" class="progress">
+                            <div class="progress-bar" role="progressbar" [style.width.%]="uploadProgress"
+                                aria-valuenow="uploadProgress" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    <div class="col-5">
+                        <label for="cookingTime">Cooking Time</label>
+                        <input type="text" name="cookingTime" formControlName="cookingTime" class="form-control" />
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-5">
+                        <label for="yield">Yield</label>
+                        <input type="text" name="yield" formControlName="yield" class="form-control" />
+                    </div>
+                    <div class="col-5">
+                        <label for="prepTime">Preparation Time</label>
+                        <input type="text" name="prepTime" formControlName="prepTime" class="form-control" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <label for="Tags">Tags</label>
+                <input type="text" name="tags" id="tags" formControlName="tags" class="form-control"
+                    (input)="updateSearch($event)" list="tagsList" />
+                <datalist id="tagsList">
+                    <option *ngFor="let tag of tagValues$ | async" [value]="tag.name"></option>
+                </datalist>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <label for="prepTime">Steps</label>
+                <input type="text" name="prepTime" formControlName="steps" class="form-control" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div class="btn-block right-actions-panel d-flex justify-content-end">
+    <button class="btn btn__cancel" (click)="clear()">Cancel</button>
+    <button class="btn btn__save" (click)="updateRecipe()">Save</button>
+</div>

@@ -1,0 +1,5 @@
+<div class="recipe-detail" *ngIf="selectedRecipe() as recipe">
+    <span class="recipe-detail__title">{{recipe.title}}</span>
+    <span class="recipe-detail__ingredients">{{recipe.ingredients}}</span>
+    <span class="recipe-detail__tags">{{recipe.tags}}</span>
+</div>

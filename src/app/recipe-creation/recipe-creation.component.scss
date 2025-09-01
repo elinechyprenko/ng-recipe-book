@@ -1,0 +1,104 @@
+h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #e91e63;
+  margin: 40px 0 20px 35px;
+}
+
+.form {
+  padding: 2rem;
+  margin: 25px;
+  background: #fff;
+  border: 1px solid #f8bbd0;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(244, 143, 177, 0.2);
+
+  label {
+    font-weight: 600;
+    color: #c2185b;
+    margin-bottom: 6px;
+    display: inline-block;
+  }
+
+  input[type="text"],
+  input[type="file"],
+  .form-control {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+
+    &:focus {
+      border-color: #e91e63;
+      box-shadow: 0 0 6px rgba(233, 30, 99, 0.3);
+    }
+  }
+
+  .progress {
+    height: 8px;
+    margin-top: 10px;
+    border-radius: 10px;
+    background: #fce4ec;
+
+    .progress-bar {
+      background: linear-gradient(90deg, #f48fb1, #e91e63);
+      border-radius: 10px;
+    }
+  }
+}
+
+.icon__block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  span {
+    font-size: 2rem;
+    color: #e91e63;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: scale(1.15);
+    }
+  }
+}
+
+.btn {
+  border: none;
+  padding: 10px 20px;
+  margin: 8px;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &__save {
+    background: #f61e67;
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(246, 30, 103, 0.3);
+
+    &:hover {
+      background: #e91e63;
+      box-shadow: 0 6px 14px rgba(233, 30, 99, 0.4);
+    }
+  }
+
+  &__cancel {
+    background: #fce4ec;
+    color: #c2185b;
+
+    &:hover {
+      background: #f8bbd0;
+      color: #880e4f;
+    }
+  }
+
+  &-block {
+    margin-right: 90px;
+  }
+}
+.right-actions-panel {
+  margin: 20px 40px;
+}
