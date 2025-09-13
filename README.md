@@ -3,6 +3,8 @@
 Recipes Book is a **full-stack web application** for managing recipes.  
 The app demonstrates modern Angular frontend development with a mock Node.js backend for providing recipe data.
 
+![Recipe book](https://github.com/elinechyprenko/ng-recipe-book/blob/master/2025-09-13%2017%2032%2020.png)
+
 ## 🚀 Features
 - **Browse Recipes**: Display recipes in a styled card layout with lazy-loaded images
 - **Filter & Search:** Filter recipes by title
